@@ -1,0 +1,20 @@
+{
+  "name": "@happyguestmx/tester",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "lambda-local": "^1.5.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "install": "node appendScript.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rafaeh1/happyguestmx-tester"
+  },
+  "author": "Rafael Hernández Larios",
+  "license": "ISC"
+}
