@@ -5,6 +5,10 @@ Happy Guest lambda tester
 This repository helps to test lambda functions locally
 
 
+## :gear: Required Tools
+Install lambda-local as global package
+* [lambda-local](https://www.npmjs.com/package/lambda-local)
+
 ## :bulb: Before installation
 Login into npm to get package permissions.
 ```

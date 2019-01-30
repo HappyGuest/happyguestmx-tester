@@ -1,15 +1,13 @@
 {
   "name": "@happyguestmx/tester",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "index.js",
-  "dependencies": {
-    "lambda-local": "^1.5.2"
-  },
+  "dependencies": {},
   "devDependencies": {},
   "scripts": {
     "install": "node appendScript.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "sh node_modules/@happyguestmx/tester/localtest.sh $env"
   },
   "repository": {
     "type": "git",
