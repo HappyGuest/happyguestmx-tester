@@ -30,7 +30,7 @@ function writePackage(packageFile) {
         else {
             packageFile.scripts = { test: scriptCommand };
         }
-        fs.writeFileSync(pathFile, JSON.stringify(packageFile));
+        fs.writeFileSync(pathFile, JSON.stringify(packageFile, null, 4));
     }
     catch(err) {
         console.log(err);
