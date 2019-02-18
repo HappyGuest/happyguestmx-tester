@@ -8,5 +8,7 @@ const relativePath = env.npm_package_name;
 const pathFile = `${env.INIT_CWD}/package.json`;
 
 const content = require(pathFile);
+// if(content.scripts)
+
 content.scripts.test = `sh node_modules/${relativePath}/localtest.sh $env`;
 fs.writeFileSync(pathFile, JSON.stringify(content));
