@@ -1,24 +1,39 @@
 'use strict';
 
 const fs = require('fs'),
-    path = require('path'),
     env = process.env;
 
-const relativePath = env.npm_package_name;
-const pathFile = `${env.INIT_CWD}/package2.json`;
+const relativePath = env.npm_package_name,
+    pathFile = `${env.INIT_CWD}/package.json`;
+    
 let packageFile;
 
 function appendScript() {
     try {
         packageFile = require(pathFile);
-        packageFile.scripts.test = `sh node_modules/${relativePath}/localtest.sh $env`;
-        fs.writeFileSync(pathFile, JSON.stringify(packageFile));
-    } catch (err) {
+        writePackage(packageFile)
+    } 
+    catch (err) {
         if (err.code === 'MODULE_NOT_FOUND') {
             packageFile = require('./src/package.json');
-            packageFile.scripts.test = `sh node_modules/${relativePath}/localtest.sh $env`;
-            fs.writeFileSync(pathFile, JSON.stringify(packageFile));
+            writePackage(packageFile);
         } else console.log(err);
+    }
+}
+
+function writePackage(packageFile) {
+    try {
+        const scriptCommand = `sh node_modules/${relativePath}/localtest.sh $env`;
+        if(packageFile.scripts) {
+            packageFile.scripts.test = scriptCommand;
+        }
+        else {
+            packageFile.scripts = { test: scriptCommand };
+        }
+        fs.writeFileSync(pathFile, JSON.stringify(packageFile));
+    }
+    catch(err) {
+        console.log(err);
     }
 }
 
