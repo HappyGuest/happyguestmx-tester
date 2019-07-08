@@ -19,7 +19,7 @@ const params = {
 };
 
 lambdaLocal.execute(params).then((done) => {
-    console.log(done);
+    console.log('execution done');
 }).catch((err) => {
     console.log(err);
 });
