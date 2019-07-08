@@ -27,8 +27,9 @@ then
     env="dev"
 fi
 
-pInfo ">> linking global package lambda-local"
+pInfo ">> linking global packages lambda-local and aws-sdk"
 npm link lambda-local
+npm link aws-sdk
 
 pInfo ">> testing function"
 node "$BASEDIR/index.js" $env

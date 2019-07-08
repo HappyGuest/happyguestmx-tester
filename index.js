@@ -15,7 +15,7 @@ const params = {
     lambdaPath: path.join(__dirname, '/../../../index.js'),
     profilePath: '~/.aws/credentials',
     profileName: 'default',
-    timeoutMs: 10000
+    timeoutMs: 90000
 };
 
 lambdaLocal.execute(params).then((done) => {
